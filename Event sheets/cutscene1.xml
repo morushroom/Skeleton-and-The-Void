@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>cutscene1</name>
+    <events>
+        <event-block sid="981558937331217">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="495768569010411" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Установить анимацию" sid="471012648955537" type="void">
+                    <param id="0" name="Анимация">&quot;idledark&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+                <action id="4" name="Установить анимацию" sid="952069811069868" type="skeleton">
+                    <param id="0" name="Анимация">&quot;idledark&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="549866265384756" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="7" name="Воспроизведение (по имени)" sid="699721912877020" type="Audio">
+                    <param id="0" name="Папка">1</param>
+                    <param id="1" name="Имя звукового файла">&quot;think&quot;</param>
+                    <param id="3" name="Цикл">1</param>
+                    <param id="4" name="Громкость">0</param>
+                    <param id="2" name="Тег (необязательно)">&quot;think&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="757033936734880">
+                    <conditions />
+                    <actions>
+                        <action id="-3" name="Create object" sid="856139015406921" type="System">
+                            <param id="0" name="Object to create">text1</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">11</param>
+                            <param id="3" name="Y">11</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="254838272345690">
+            <conditions>
+                <condition id="-18" name="On created" sid="873653912655355" type="text1" />
+            </conditions>
+            <actions>
+                <action behavior="Timer" id="0" name="Запустить таймер" sid="568854753688239" type="text1">
+                    <param id="0" name="Продолжительность">Self.typeInterval</param>
+                    <param id="1" name="Тип">1</param>
+                    <param id="2" name="Тег">&quot;nextLetter&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="134752112484607">
+            <conditions>
+                <condition behavior="Timer" id="0" name="Таймер" sid="679566914038830" type="text1">
+                    <param id="0" name="Тег">&quot;nextLetter&quot;</param>
+                </condition>
+                <condition id="-4" inverted="1" name="Is outside layout" sid="833088684807272" type="text1" />
+            </conditions>
+            <actions>
+                <action id="4" name="Установить анимацию" sid="820237036437118" type="void">
+                    <param id="0" name="Анимация">&quot;idle&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="284931579463286">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="915033908083731" type="System">
+                            <param id="0" name="First value">len(text1.Text)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">len(text1.completeText)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Набор текста" sid="278419250097534" type="text1">
+                            <param id="0" name="Текст">left(Self.completeText, len(Self.Text) + 1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="771540554525276">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="912345934968355" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="1" name="Остановить таймер" sid="299366740303672" type="text1">
+                            <param id="0" name="Тег">&quot;nextLetter&quot;</param>
+                        </action>
+                        <action id="2" name="Стоп" sid="485384438928933" type="void" />
+                        <action id="-15" name="Set visible" sid="221107509667448" type="zbutton">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="237640670694190">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="268322857056669" type="System">
+                            <param id="0" name="First value">right(text1.Text, 1)</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot; &quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Играть" sid="716104237549803" type="Audio">
+                            <param id="0" name="Аудио файл">click</param>
+                            <param id="2" name="Петля">0</param>
+                            <param id="3" name="Громкость">-10</param>
+                            <param id="1" name="Метка (необязательно)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="240454189564273">
+            <conditions>
+                <condition id="0" name="Клавиша нажата" sid="998163805195719" type="Keyboard">
+                    <param id="0" name="Клавиша">90</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="223626945705166" type="text1" />
+                <condition id="-8" name="Compare two values" sid="183124902350995" type="System">
+                    <param id="0" name="First value">len(text1.Text)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="638970230545350" type="text1" />
+                <action id="-15" name="Set visible" sid="885941570069537" type="zbutton">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="656630994197718">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="358154365394410" type="text1" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="457714602130395" type="System">
+                    <param id="0" name="Object to create">text2</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">400</param>
+                    <param id="3" name="Y">11</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="605393816267861">
+            <conditions>
+                <condition id="-18" name="On created" sid="577545394035096" type="text2" />
+            </conditions>
+            <actions>
+                <action behavior="Timer" id="0" name="Запустить таймер" sid="898766087039508" type="text2">
+                    <param id="0" name="Продолжительность">Self.typeInterval</param>
+                    <param id="1" name="Тип">1</param>
+                    <param id="2" name="Тег">&quot;nextLetter&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="439123039432966">
+            <conditions>
+                <condition behavior="Timer" id="0" name="Таймер" sid="787441779119681" type="text2">
+                    <param id="0" name="Тег">&quot;nextLetter&quot;</param>
+                </condition>
+                <condition id="-4" inverted="1" name="Is outside layout" sid="994917114360169" type="text2" />
+            </conditions>
+            <actions>
+                <action id="4" name="Установить анимацию" sid="654523202153593" type="void">
+                    <param id="0" name="Анимация">&quot;idledark&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+                <action id="4" name="Установить анимацию" sid="112257852660420" type="skeleton">
+                    <param id="0" name="Анимация">&quot;idle&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="782189070283714">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="596421694368999" type="System">
+                            <param id="0" name="First value">len(text2.Text)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">len(text2.completeText)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Набор текста" sid="806178561713699" type="text2">
+                            <param id="0" name="Текст">left(Self.completeText, len(Self.Text) + 1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="520058189004619">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="951743068353742" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="1" name="Остановить таймер" sid="766154483232122" type="text2">
+                            <param id="0" name="Тег">&quot;nextLetter&quot;</param>
+                        </action>
+                        <action id="2" name="Стоп" sid="316419437765688" type="skeleton" />
+                        <action id="-15" name="Set visible" sid="559133748490167" type="zbutton">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="891497542407896">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="469186567080455" type="System">
+                            <param id="0" name="First value">right(text2.Text, 1)</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot; &quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Играть" sid="430837423495762" type="Audio">
+                            <param id="0" name="Аудио файл">skeletorcut</param>
+                            <param id="2" name="Петля">0</param>
+                            <param id="3" name="Громкость">-10</param>
+                            <param id="1" name="Метка (необязательно)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="658420668385809">
+            <conditions>
+                <condition id="0" name="Клавиша нажата" sid="408381719141338" type="Keyboard">
+                    <param id="0" name="Клавиша">90</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="866536663723211" type="text2" />
+                <condition id="-8" name="Compare two values" sid="912228265966661" type="System">
+                    <param id="0" name="First value">len(text2.Text)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="335198109422418" type="text2" />
+                <action id="-15" name="Set visible" sid="891794723435832" type="zbutton">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="103309890097429">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="199249843257717" type="text2" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="770699507820994" type="System">
+                    <param id="0" name="Object to create">text3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">11</param>
+                    <param id="3" name="Y">11</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="949482819004854">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="733572907481969" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Остановить" sid="539171346735050" type="Audio">
+                    <param id="0" name="Тег">&quot;think&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="425522892748157">
+            <conditions>
+                <condition id="-18" name="On created" sid="225022744907962" type="text3" />
+            </conditions>
+            <actions>
+                <action behavior="Timer" id="0" name="Запустить таймер" sid="444655366061737" type="text3">
+                    <param id="0" name="Продолжительность">Self.typeInterval</param>
+                    <param id="1" name="Тип">1</param>
+                    <param id="2" name="Тег">&quot;nextLetter&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="952388003696344">
+            <conditions>
+                <condition behavior="Timer" id="0" name="Таймер" sid="443382536484917" type="text3">
+                    <param id="0" name="Тег">&quot;nextLetter&quot;</param>
+                </condition>
+                <condition id="-4" inverted="1" name="Is outside layout" sid="806316993649113" type="text3" />
+            </conditions>
+            <actions>
+                <action id="4" name="Установить анимацию" sid="812727530511915" type="void">
+                    <param id="0" name="Анимация">&quot;idle&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+                <action id="4" name="Установить анимацию" sid="769161452210723" type="skeleton">
+                    <param id="0" name="Анимация">&quot;idledark&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="128015267302545">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="683657974654257" type="System">
+                            <param id="0" name="First value">len(text3.Text)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">len(text3.completeText)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Набор текста" sid="536910315373549" type="text3">
+                            <param id="0" name="Текст">left(Self.completeText, len(Self.Text) + 1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="137777660567607">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="635531412010894" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="1" name="Остановить таймер" sid="495721711061450" type="text3">
+                            <param id="0" name="Тег">&quot;nextLetter&quot;</param>
+                        </action>
+                        <action id="2" name="Стоп" sid="974088720115929" type="void" />
+                        <action id="-15" name="Set visible" sid="221326067452962" type="zbutton">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="663832573818494">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="735876264897951" type="System">
+                            <param id="0" name="First value">right(text3.Text, 1)</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot; &quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Играть" sid="792903505405834" type="Audio">
+                            <param id="0" name="Аудио файл">click</param>
+                            <param id="2" name="Петля">0</param>
+                            <param id="3" name="Громкость">-10</param>
+                            <param id="1" name="Метка (необязательно)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="966963548290979">
+            <conditions>
+                <condition id="0" name="Клавиша нажата" sid="515929158377384" type="Keyboard">
+                    <param id="0" name="Клавиша">90</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="730896574841266" type="text3" />
+                <condition id="-8" name="Compare two values" sid="311550653948241" type="System">
+                    <param id="0" name="First value">len(text3.Text)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="135022879583507" type="text3" />
+                <action id="-15" name="Set visible" sid="537494790181424" type="zbutton">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="791021349860393">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="950486289417602" type="text3" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="207892877009072" type="System">
+                    <param id="0" name="Object to create">text4</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">400</param>
+                    <param id="3" name="Y">11</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="873310780200963">
+            <conditions>
+                <condition id="-18" name="On created" sid="726250632462002" type="text4" />
+            </conditions>
+            <actions>
+                <action behavior="Timer" id="0" name="Запустить таймер" sid="438107435020302" type="text4">
+                    <param id="0" name="Продолжительность">Self.typeInterval</param>
+                    <param id="1" name="Тип">1</param>
+                    <param id="2" name="Тег">&quot;nextLetter&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="124136215851404">
+            <conditions>
+                <condition behavior="Timer" id="0" name="Таймер" sid="121562311826816" type="text4">
+                    <param id="0" name="Тег">&quot;nextLetter&quot;</param>
+                </condition>
+                <condition id="-4" inverted="1" name="Is outside layout" sid="914540123031704" type="text4" />
+            </conditions>
+            <actions>
+                <action id="4" name="Установить анимацию" sid="436492591317577" type="void">
+                    <param id="0" name="Анимация">&quot;idledark&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+                <action id="4" name="Установить анимацию" sid="138833507989389" type="skeleton">
+                    <param id="0" name="Анимация">&quot;idle&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="547271404439663">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="961266214246922" type="System">
+                            <param id="0" name="First value">len(text4.Text)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">len(text4.completeText)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Набор текста" sid="974995554342498" type="text4">
+                            <param id="0" name="Текст">left(Self.completeText, len(Self.Text) + 1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="115814922714878">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="300590063921741" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="1" name="Остановить таймер" sid="685549409549237" type="text4">
+                            <param id="0" name="Тег">&quot;nextLetter&quot;</param>
+                        </action>
+                        <action id="2" name="Стоп" sid="472744118177403" type="skeleton" />
+                        <action id="-15" name="Set visible" sid="163558083326014" type="zbutton">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="624107046962017">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="364044089286459" type="System">
+                            <param id="0" name="First value">right(text4.Text, 1)</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot; &quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Играть" sid="393249935001410" type="Audio">
+                            <param id="0" name="Аудио файл">skeletorcut</param>
+                            <param id="2" name="Петля">0</param>
+                            <param id="3" name="Громкость">-10</param>
+                            <param id="1" name="Метка (необязательно)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="816032513333474">
+            <conditions>
+                <condition id="0" name="Клавиша нажата" sid="736097965124621" type="Keyboard">
+                    <param id="0" name="Клавиша">90</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="291974179908934" type="text4" />
+                <condition id="-8" name="Compare two values" sid="162713347082014" type="System">
+                    <param id="0" name="First value">len(text4.Text)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="956299038442641" type="text4" />
+                <action id="-15" name="Set visible" sid="730639077082045" type="zbutton">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="296885260215936">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="428987554539007" type="text4" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="682163497419061" type="white">
+                    <param id="0" name="Instance variable">changeable</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="6" name="Остановить" sid="136552333769416" type="Audio">
+                    <param id="0" name="Тег">&quot;think&quot;</param>
+                </action>
+                <action id="0" name="Играть" sid="179315222524626" type="Audio">
+                    <param id="0" name="Аудио файл">ps2boot</param>
+                    <param id="2" name="Петля">0</param>
+                    <param id="3" name="Громкость">0</param>
+                    <param id="1" name="Метка (необязательно)">&quot;boot&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="475399532721770">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="162656910393026" type="System" />
+                <condition id="-7" name="Compare instance variable" sid="959792335155788" type="white">
+                    <param id="0" name="Instance variable">changeable</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-17" name="Move forward" sid="175053495785754" type="skeleton">
+                    <param id="0" name="Distance">-1</param>
+                </action>
+                <action id="-17" name="Move forward" sid="186346497957358" type="void">
+                    <param id="0" name="Distance">1</param>
+                </action>
+                <action id="-11" name="Add to" sid="101656490431056" type="white">
+                    <param id="0" name="Instance variable">snowpacity</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="144608461756977">
+                    <conditions>
+                        <condition id="0" name="Закончился" sid="938930719164505" type="Audio">
+                            <param id="0" name="Тег">&quot;boot&quot;</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="588177717999209" type="white">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="802926439333802" type="System">
+                            <param id="0" name="Layout">level 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="502116093470801">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="823421579277369" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="159783495674624" type="white">
+                    <param id="0" name="Opacity">white.snowpacity</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

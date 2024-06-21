@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>title</name>
+    <events>
+        <event-block sid="904302668345734">
+            <conditions>
+                <condition id="7" name="Курсор над объектом" sid="945160436485224" type="Mouse">
+                    <param id="0" name="Объект">startbutton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Установить анимацию" sid="859683601437347" type="screen">
+                    <param id="0" name="Анимация">&quot;pressed&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="848542889761154">
+            <conditions>
+                <condition id="7" inverted="1" name="Курсор над объектом" sid="165510227075720" type="Mouse">
+                    <param id="0" name="Объект">startbutton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Установить анимацию" sid="309744358874056" type="screen">
+                    <param id="0" name="Анимация">&quot;title&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="486060940850131">
+            <conditions>
+                <condition id="6" name="На объекте щелкнули" sid="709030005788755" type="Mouse">
+                    <param id="0" name="Кнопка мыши">0</param>
+                    <param id="1" name="Тип клика">0</param>
+                    <param id="2" name="Объект щелкнут">startbutton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="282783170396278" type="System">
+                    <param id="0" name="Layout">cutscene1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="732947028816209">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="328449496469449" type="System" />
+            </conditions>
+            <actions>
+                <action id="7" name="Воспроизведение (по имени)" sid="409866397838193" type="Audio">
+                    <param id="0" name="Папка">1</param>
+                    <param id="1" name="Имя звукового файла">&quot;title&quot;</param>
+                    <param id="3" name="Цикл">1</param>
+                    <param id="4" name="Громкость">-5</param>
+                    <param id="2" name="Тег (необязательно)">&quot;title&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="513490303085460">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="179596807637593" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Остановить" sid="105552714877580" type="Audio">
+                    <param id="0" name="Тег">&quot;title&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,638 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>engine</name>
+    <events>
+        <variable constant="0" name="alive" sid="724100043000208" static="0" type="number">1</variable>
+        <variable constant="0" name="exploded" sid="116235721036004" static="0" type="number">0</variable>
+        <variable constant="0" name="BossHP" sid="993833392360696" static="0" type="number">800</variable>
+        <variable constant="0" name="Score" sid="732824668468248" static="0" type="number">0</variable>
+        <event-block sid="919351138386955">
+            <conditions>
+                <condition id="2" name="Клавиша нажата" sid="543816990009234" type="Keyboard">
+                    <param id="0" name="Клавиша">83</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8направлении" id="7" name="Симулировать движение" sid="395692901888820" type="skellydude">
+                    <param id="0" name="Управление">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="405227120192409">
+            <conditions>
+                <condition id="2" name="Клавиша нажата" sid="407773347676736" type="Keyboard">
+                    <param id="0" name="Клавиша">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8направлении" id="7" name="Симулировать движение" sid="889013406247841" type="skellydude">
+                    <param id="0" name="Управление">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="260582994783462">
+            <conditions>
+                <condition id="2" name="Клавиша нажата" sid="281533573439043" type="Keyboard">
+                    <param id="0" name="Клавиша">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8направлении" id="7" name="Симулировать движение" sid="207645772558444" type="skellydude">
+                    <param id="0" name="Управление">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="558625491179884">
+            <conditions>
+                <condition id="2" name="Клавиша нажата" sid="554946357418862" type="Keyboard">
+                    <param id="0" name="Клавиша">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8направлении" id="7" name="Симулировать движение" sid="532504374248050" type="skellydude">
+                    <param id="0" name="Управление">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="485179970698971">
+            <conditions>
+                <condition id="2" name="Кнопка мыши нажата" sid="466563969132876" type="Mouse">
+                    <param id="0" name="Кнопка мыши">0</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="375501958292208" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="471303326941053" type="System">
+                    <param id="0" name="Variable">alive</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="386845139724359" type="System">
+                    <param id="0" name="Object to create">skull</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">skellydude.X</param>
+                    <param id="3" name="Y">skellydude.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="272318078613850">
+            <conditions>
+                <condition id="-18" name="On created" sid="554793572007064" type="skull" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="409461726461179" type="skull">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-15" name="Set visible" sid="556674834344040" type="skull">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Играть" sid="973696762878589" type="Audio">
+                    <param id="0" name="Аудио файл">skeletorcut</param>
+                    <param id="2" name="Петля">0</param>
+                    <param id="3" name="Громкость">-20</param>
+                    <param id="1" name="Метка (необязательно)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="555150109750606">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="602214250271634" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="150655318922548" type="skellydude">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="0" name="Набор текста" sid="918521214286667" type="score">
+                    <param id="0" name="Текст">&quot;Score: &quot; &amp; Score</param>
+                </action>
+                <action id="0" name="Набор текста" sid="230648129740046" type="bosshp">
+                    <param id="0" name="Текст">&quot;Boss: &quot; &amp; BossHP</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="721697735325214">
+            <conditions>
+                <condition id="1" name="При любом клике" sid="466234220747960" type="Mouse" />
+            </conditions>
+            <actions>
+                <action id="1" name="Установить курсор из спрайта" sid="777134358072297" type="Mouse">
+                    <param id="0" name="Спрайт">crosshair</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="486126049209050">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="728678625433664" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Играть" sid="877280693015161" type="Audio">
+                    <param id="0" name="Аудио файл">cleareyes</param>
+                    <param id="2" name="Петля">0</param>
+                    <param id="3" name="Громкость">-10</param>
+                    <param id="1" name="Метка (необязательно)">&quot;ost&quot;</param>
+                </action>
+                <action id="-28" name="Set canvas size" sid="759254136535996" type="System">
+                    <param id="0" name="Width">640</param>
+                    <param id="1" name="Height">360</param>
+                </action>
+                <action id="-9" name="Set value" sid="640490209278537" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="468121458966315" type="System">
+                    <param id="0" name="Variable">BossHP</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="762514711539612" type="System">
+                    <param id="0" name="Variable">alive</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Прокрутитьдо" id="1" name="Установить включение" sid="164390986027285" type="skellydude">
+                    <param id="0" name="Состояние">1</param>
+                </action>
+                <action behavior="Прокрутитьдо" id="1" name="Установить включение" sid="960860361072530" type="fatnig">
+                    <param id="0" name="Состояние">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="725893611060494" type="System">
+                    <param id="0" name="Variable">exploded</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="1" name="Get list" sid="642367067374327" type="Medal" />
+                <action id="11" name="Get boards" sid="427761244118094" type="Scoreboard" />
+                <action id="1" name="Set board ID" sid="492841198100732" type="Scoreboard">
+                    <param id="0" name="ID">11052</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="250369735897035">
+            <conditions>
+                <condition id="-18" name="On created" sid="413175438258265" type="message" />
+            </conditions>
+            <actions>
+                <action behavior="Timer" id="0" name="Запустить таймер" sid="282572753794022" type="text1">
+                    <param id="0" name="Продолжительность">Self.typeInterval</param>
+                    <param id="1" name="Тип">1</param>
+                    <param id="2" name="Тег">&quot;nextLetter&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="630309350988179">
+            <conditions>
+                <condition behavior="Timer" id="0" name="Таймер" sid="350928339591809" type="message">
+                    <param id="0" name="Тег">&quot;nextLetter&quot;</param>
+                </condition>
+                <condition id="-4" inverted="1" name="Is outside layout" sid="887389523360392" type="message" />
+            </conditions>
+            <actions>
+                <action id="4" name="Установить анимацию" sid="500932717748152" type="void">
+                    <param id="0" name="Анимация">&quot;idle&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="785254503690779">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="186763498807723" type="System">
+                            <param id="0" name="First value">len(text1.Text)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">len(text1.completeText)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Набор текста" sid="638538859061090" type="text1">
+                            <param id="0" name="Текст">left(Self.completeText, len(Self.Text) + 1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="894508016339927">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="157554585825708" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="1" name="Остановить таймер" sid="781402806718612" type="text1">
+                            <param id="0" name="Тег">&quot;nextLetter&quot;</param>
+                        </action>
+                        <action id="2" name="Стоп" sid="502485737275194" type="void" />
+                        <action id="-16" name="Wait" sid="842674543076485" type="System">
+                            <param id="0" name="Seconds">2.0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="328081195236775">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Destroy" sid="836643556030717" type="message" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="519151448438909">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="746259054565188" type="System">
+                            <param id="0" name="First value">right(text1.Text, 1)</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot; &quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Играть" sid="687654479004807" type="Audio">
+                            <param id="0" name="Аудио файл">click</param>
+                            <param id="2" name="Петля">0</param>
+                            <param id="3" name="Громкость">-10</param>
+                            <param id="1" name="Метка (необязательно)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="583232145473678" title="enemies">
+            <sub-events>
+                <event-block sid="780573199812724">
+                    <conditions>
+                        <condition behavior="Полезрения" id="0" name="Имеет LOS к объекту" sid="584286564334096" type="chinaman">
+                            <param id="0" name="Объект">skellydude</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="417746508568370" type="chinaman">
+                            <param id="0" name="X">skellydude.X</param>
+                            <param id="1" name="Y">skellydude.Y</param>
+                        </action>
+                        <action id="-17" name="Move forward" sid="124217391466742" type="chinaman">
+                            <param id="0" name="Distance">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="997440055770057">
+                    <conditions>
+                        <condition id="0" name="В столкновении с другим объектом" sid="947092495373763" type="chinaman">
+                            <param id="0" name="Объект">skull</param>
+                        </condition>
+                        <condition id="-3" name="Is on-screen" sid="144215509971682" type="chinaman" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="757442711748776" type="chinaman" />
+                    </actions>
+                </event-block>
+                <event-block sid="779268482263479">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="651865167278509" type="chinaman" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Играть" sid="385860284473251" type="Audio">
+                            <param id="0" name="Аудио файл">chinchan</param>
+                            <param id="2" name="Петля">0</param>
+                            <param id="3" name="Громкость">-5</param>
+                            <param id="1" name="Метка (необязательно)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="794964400486757" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="537158226218128">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="531459573473246" type="System">
+                            <param id="0" name="Interval (seconds)">5.0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="454036140107756" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="446066304072003" type="System">
+                            <param id="0" name="Object to create">chinaman</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="X">1200</param>
+                            <param id="3" name="Y">70</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="717627568305534" type="System">
+                            <param id="0" name="Object to create">chinaman</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="X">1200</param>
+                            <param id="3" name="Y">680</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="576597233752743" type="System">
+                            <param id="0" name="Object to create">chinaman</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="X">50</param>
+                            <param id="3" name="Y">680</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="620709881160079" type="System">
+                            <param id="0" name="Object to create">chinaman</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="X">50</param>
+                            <param id="3" name="Y">70</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="193896552627091">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="700084987994089" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="751212062758193" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Остановить" sid="733772423500706" type="Audio">
+                    <param id="0" name="Тег">&quot;ost&quot;</param>
+                </action>
+                <action id="0" name="Играть" sid="256794886597204" type="Audio">
+                    <param id="0" name="Аудио файл">ronaldinio</param>
+                    <param id="2" name="Петля">0</param>
+                    <param id="3" name="Громкость">-10</param>
+                    <param id="1" name="Метка (необязательно)">&quot;soccer&quot;</param>
+                </action>
+                <action id="11" name="Unlock" sid="611360985537272" type="Medal">
+                    <param id="0" name="ID">66163</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="659228420570632">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="769691239136289" type="System" />
+            </conditions>
+            <actions>
+                <action id="-28" name="Set effect parameter" sid="600362502801805" type="nikocado1">
+                    <param id="0" name="Effect">&quot;Обратный&quot;</param>
+                    <param id="1" name="Parameter index">0</param>
+                    <param id="2" name="Value">nikocado1.negativity</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="943640833693944">
+            <conditions>
+                <condition id="0" name="Закончился" sid="659500802562953" type="Audio">
+                    <param id="0" name="Тег">&quot;soccer&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Играть" sid="365310853064129" type="Audio">
+                    <param id="0" name="Аудио файл">chinchan</param>
+                    <param id="2" name="Петля">0</param>
+                    <param id="3" name="Громкость">0</param>
+                    <param id="1" name="Метка (необязательно)">&quot;boss&quot;</param>
+                </action>
+                <action id="-3" name="Create object" sid="978694321825199" type="System">
+                    <param id="0" name="Object to create">fatnig</param>
+                    <param id="1" name="Layer">3</param>
+                    <param id="2" name="X">1000</param>
+                    <param id="3" name="Y">200</param>
+                </action>
+                <action id="0" name="Играть" sid="178957653130679" type="Audio">
+                    <param id="0" name="Аудио файл">boss</param>
+                    <param id="2" name="Петля">0</param>
+                    <param id="3" name="Громкость">-10</param>
+                    <param id="1" name="Метка (необязательно)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="636702496919488">
+            <conditions>
+                <condition id="-18" name="On created" sid="388499076244471" type="fatnig" />
+            </conditions>
+            <actions>
+                <action behavior="Прокрутитьдо" id="1" name="Установить включение" sid="656156711238978" type="fatnig">
+                    <param id="0" name="Состояние">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="702511815664450">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="872073928092207" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="458608201048343" type="bosshp">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="611155586832786">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="828561874272508" type="System">
+                    <param id="0" name="Variable">BossHP</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="272805932025683" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Прокрутитьдо" id="1" name="Установить включение" sid="772286984436532" type="skellydude">
+                    <param id="0" name="Состояние">0</param>
+                </action>
+                <action behavior="8направлении" id="0" name="Остановить" sid="300176319293247" type="skellydude" />
+                <action id="0" name="Играть" sid="945838158087713" type="Audio">
+                    <param id="0" name="Аудио файл">nooo</param>
+                    <param id="2" name="Петля">0</param>
+                    <param id="3" name="Громкость">0</param>
+                    <param id="1" name="Метка (необязательно)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="753085893857042" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="21" name="Post score" sid="765753601649178" type="Scoreboard">
+                    <param id="0" name="Value">Score</param>
+                    <param id="1" name="Tag">&quot;&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="501536583671298">
+                    <conditions />
+                    <actions>
+                        <action id="-3" name="Create object" sid="557204837647806" type="System">
+                            <param id="0" name="Object to create">xplosion</param>
+                            <param id="1" name="Layer">4</param>
+                            <param id="2" name="X">fatnig.X</param>
+                            <param id="3" name="Y">fatnig.Y</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="150539457642407" type="fatnig" />
+                        <action id="-16" name="Wait" sid="794126422530478" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="107909346698296">
+                            <conditions />
+                            <actions>
+                                <action id="33" name="Остановить все" sid="522200681204708" type="Audio" />
+                                <action id="-2" name="Go to layout" sid="274580955044313" type="System">
+                                    <param id="0" name="Layout">winscreen</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="642365596301856">
+            <conditions>
+                <condition id="0" name="В столкновении с другим объектом" sid="323538641010446" type="fatnig">
+                    <param id="0" name="Объект">skull</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="311247160895823" type="System">
+                    <param id="0" name="Variable">BossHP</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="744598393643124" type="System">
+                    <param id="0" name="Variable">BossHP</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="0" name="Играть" sid="284023308351670" type="Audio">
+                    <param id="0" name="Аудио файл">thwomp</param>
+                    <param id="2" name="Петля">0</param>
+                    <param id="3" name="Громкость">-20</param>
+                    <param id="1" name="Метка (необязательно)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="377070456252582">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="748931844539803" type="System" />
+                <condition id="-14" name="Compare variable" sid="390513272838006" type="System">
+                    <param id="0" name="Variable">BossHP</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="901030905144283" type="fatnig">
+                    <param id="0" name="X">skellydude.X</param>
+                    <param id="1" name="Y">skellydude.Y</param>
+                </action>
+                <action id="-17" name="Move forward" sid="620724209876523" type="fatnig">
+                    <param id="0" name="Distance">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="572716689657206">
+            <conditions>
+                <condition id="0" name="В столкновении с другим объектом" sid="753785560918621" type="enemies">
+                    <param id="0" name="Объект">skellydude</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="352109827116928" type="System">
+                    <param id="0" name="Variable">BossHP</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="998634725155281" type="System">
+                    <param id="0" name="Variable">alive</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="837267484436917" type="skellydude" />
+                <action id="6" name="Остановить" sid="197343284748249" type="Audio">
+                    <param id="0" name="Тег">&quot;ost&quot;</param>
+                </action>
+                <action id="6" name="Остановить" sid="518098275397466" type="Audio">
+                    <param id="0" name="Тег">&quot;boss&quot;</param>
+                </action>
+                <action id="0" name="Играть" sid="413846541770094" type="Audio">
+                    <param id="0" name="Аудио файл">fart</param>
+                    <param id="2" name="Петля">0</param>
+                    <param id="3" name="Громкость">0</param>
+                    <param id="1" name="Метка (необязательно)">&quot;lose&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="364217427851043" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="696823017899927">
+                    <conditions />
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="213690581406859" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="109356873878847">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="194776548877707" type="nikocado1">
+                    <param id="0" name="Instance variable">negativity</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="107561028622642" type="System">
+                    <param id="0" name="Interval (seconds)">0.2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="904469811314927" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="240315092147553" type="nikocado1">
+                    <param id="0" name="Instance variable">negativity</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="963047128514049">
+            <conditions>
+                <condition id="-18" name="On created" sid="180457180199311" type="xplosion" />
+            </conditions>
+            <actions>
+                <action id="4" name="Установить анимацию" sid="702161787344308" type="xplosion">
+                    <param id="0" name="Анимация">&quot;xplode&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="836973937309362">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="636253207013527" type="System">
+                            <param id="0" name="Variable">exploded</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Играть" sid="589624404100177" type="Audio">
+                            <param id="0" name="Аудио файл">fart</param>
+                            <param id="2" name="Петля">0</param>
+                            <param id="3" name="Громкость">0</param>
+                            <param id="1" name="Метка (необязательно)">&quot;fartrt&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="537450451257358">
+            <conditions>
+                <condition id="4" name="Завершена" sid="363766650109645" type="xplosion">
+                    <param id="0" name="Анимация">&quot;xplode&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="136571829286029" type="xplosion" />
+                <action id="-9" name="Set value" sid="439956702464807" type="System">
+                    <param id="0" name="Variable">exploded</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

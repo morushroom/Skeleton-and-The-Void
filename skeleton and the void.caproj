@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>skeleton and the void</name>
+    <description></description>
+    <version>1.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>2qpiupr2gjili</unique-id>
+    <saved-with-version>27900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Аудио</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Браузер</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Клавиатура</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Мышь</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_NGIO_Authentication" version="0.100000001">Authentication</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_NGIO_Medal" version="0.100000001">Medal</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_NGIO_Scoreboard" version="0.100000001">Scoreboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Спрайт</plugin>
+        <plugin author="Scirra" id="Text" version="1">Текст</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Плиточный Фон</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Касание</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
+        <plugin author="Scirra" id="gamepad" version="1">Геймпад</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Пуля</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 направлении</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Поле зрения</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Таймер</behavior>
+        <behavior author="Scirra" id="bound" version="1">Связанные с макета</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Уничтожение вне макета</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Прокрутить до</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="inverse">Обратный</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>320</width>
+        <height>180</height>
+    </window-size>
+    <pixel-rounding>1</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>titlescreen</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox integer scale</prop>
+        <prop name="Fullscreen scaling">Low quality</prop>
+        <prop name="Fullscreen scaling quality">Low</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">Yes</prop>
+        <prop name="Preview browser">NW.js</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use iOS retina display">All devices</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="TiledBackground" sid="3206956448522659">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="WebStorage" sid="1510269620771624">
+            <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="Gamepad" sid="996683554706134">
+            <plugin id="gamepad" />
+        </object-type>
+        <object-type name="Keyboard" sid="4436305314906168">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Mouse" sid="3506161195311074">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Touch" sid="2463496682349194">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Audio" sid="2722091819329769">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Browser" sid="3498868852026895">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="screen" sid="292036377157029">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="title" pingpong="0" repeatcount="1" repeatto="0" sid="606788141987680" speed="5">
+                    <frame duration="1" hotspotX="0.501992" hotspotY="0.502488" original-source="C:\Users\Beniska\Downloads\title.png" />
+                </animation>
+                <animation framecount="2" loop="1" name="pressed" pingpong="0" repeatcount="1" repeatto="0" sid="836082085366133" speed="10">
+                    <frame duration="1" hotspotX="0.501992" hotspotY="0.502488" />
+                    <frame duration="1" hotspotX="0.501992" hotspotY="0.502488" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="startbutton" sid="764957187182391">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="860067140952342" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="background" sid="101824055279568">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Beniska\Downloads\vangogh.png" />
+        </object-type>
+        <object-type name="skeleton" sid="361706508969897">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="1" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="943084634690723" speed="7">
+                    <frame duration="1" hotspotX="0.504951" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.504951" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.504951" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.504951" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="1" name="idledark" pingpong="0" repeatcount="1" repeatto="0" sid="744506834059126" speed="7">
+                    <frame duration="1" hotspotX="0.504951" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="void" sid="895799978950393">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="1" name="idle" pingpong="1" repeatcount="1" repeatto="0" sid="129800668216563" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="1" name="idledark" pingpong="1" repeatcount="1" repeatto="0" sid="664093612679286" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="text1" sid="988806341299722">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="completeText" sid="798439068948955" type="string" />
+                <instance-variable name="typeInterval" sid="740628274787527" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="402266929145995">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="text2" sid="820292991322289">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="completeText" sid="779444402024605" type="string" />
+                <instance-variable name="typeInterval" sid="143737431794089" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="881528611329161">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="zbutton" sid="288410640905685">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="5" loop="1" name="normal" pingpong="0" repeatcount="1" repeatto="0" sid="473812908943952" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="text3" sid="547167200170496">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="completeText" sid="496883431273800" type="string" />
+                <instance-variable name="typeInterval" sid="306501478498426" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="812146104746231">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="text4" sid="670904565376013">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="completeText" sid="916256883899189" type="string" />
+                <instance-variable name="typeInterval" sid="760537930027821" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="456278333806234">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="white" sid="943640209359982">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="changeable" sid="137575147991562" type="number" />
+                <instance-variable name="snowpacity" sid="505830720255931" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="258600642708812" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="skull" sid="738204957643229">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Пуля" sid="895826105188460">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Уничтожениевнемакета" sid="496888119306341">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="75" loop="1" name="speeen" pingpong="0" repeatcount="1" repeatto="0" sid="576400163936425" speed="60">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="skellydude" sid="465944002944829">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="8направлении" sid="356156719956015">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Связанныесмакета" sid="911101325103484">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Прокрутитьдо" sid="358344615233086">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="775028885927140" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Games\my gems\skellyboard.png">
+                        <image-point name="bullet" x="0.75" y="0.5" />
+                        <collision-poly>
+                            <point x="0.8125" y="0.125" />
+                            <point x="0.8125" y="0.875" />
+                            <point x="0.109375" y="0.875" />
+                            <point x="0.109375" y="0.125" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="crosshair" sid="418469588769502">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="883161214500661" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="nikocado1" sid="264917409058277">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="negativity" sid="436692460804341" type="number" />
+            </instance-variables>
+            <effects>
+                <effect-type name="Обратный">
+                    <effect id="inverse" />
+                </effect-type>
+            </effects>
+            <texture original-source="C:\Users\Beniska\Downloads\maxresdefault (1).jpg" />
+        </object-type>
+        <object-type name="message" sid="920209308118489">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="completeText" sid="827928148466278" type="string" />
+                <instance-variable name="typeInterval" sid="609151569938052" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="133089774545170">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="score" sid="314325781036260">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="chinaman" sid="621045930333387">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Полезрения" sid="179466971385469">
+                    <behavior id="LOS" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="252386721584651" speed="5">
+                    <frame duration="1" hotspotX="0.53125" hotspotY="0.5625" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="fatnig" sid="943411981748302">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Прокрутитьдо" sid="610914963957744">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="Уничтожениевнемакета" sid="545869992307561">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="919314672236577" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Beniska\Downloads\Ceyr7zdbxw821.png">
+                        <collision-poly>
+                            <point x="0.261506" y="0.274123" />
+                            <point x="0.5" y="0.00877193" />
+                            <point x="0.725941" y="0.287281" />
+                            <point x="0.820084" y="0.5" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bosshp" sid="107947258523148">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="won" sid="608449955910628">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Новая" pingpong="0" repeatcount="1" repeatto="0" sid="921199810753968" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.694444" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="arrow" sid="270315393509730">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="click" pingpong="0" repeatcount="1" repeatto="0" sid="457646723891605" speed="5">
+                    <frame duration="1" hotspotX="0.25" hotspotY="0.064">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.492" />
+                            <point x="0" y="0.496" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.25" hotspotY="0.064">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.492" />
+                            <point x="0" y="0.496" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="xplosion" sid="861457823834177">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="24" loop="0" name="xplode" pingpong="0" repeatcount="1" repeatto="0" sid="658188569975561" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Authentication" sid="845750828621191">
+            <plugin id="Rex_NGIO_Authentication" />
+        </object-type>
+        <object-type global="1" name="Medal" sid="853515263558017">
+            <plugin id="Rex_NGIO_Medal" />
+        </object-type>
+        <object-type global="1" name="Scoreboard" sid="299286565720071">
+            <plugin id="Rex_NGIO_Scoreboard" />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="enemies" plugin-id="Sprite" sid="893280679713268">
+            <members>
+                <member>chinaman</member>
+                <member>fatnig</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>titlescreen.xml</layout>
+        <layout>cutscene1.xml</layout>
+        <layout>level 1.xml</layout>
+        <layout>winscreen.xml</layout>
+        <layout>unused.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>title.xml</event-sheet>
+        <event-sheet>cutscene1.xml</event-sheet>
+        <event-sheet>engine.xml</event-sheet>
+        <event-sheet>win.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="WebStorage" uid="1" />
+        <global-instance type="Gamepad" uid="2">
+            <properties>
+                <analog-deadzone>25</analog-deadzone>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="3" />
+        <global-instance type="Mouse" uid="4" />
+        <global-instance type="Touch" uid="5">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Audio" uid="6">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Browser" uid="7" />
+        <global-instance type="Authentication" uid="32">
+            <properties>
+                <app-id>53453:vNCRG42r</app-id>
+                <aes-key>eaC1I6ECt5AfgoVFsVVxBw==</aes-key>
+                <debug>No</debug>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="click.ogg" />
+        <file name="ps2boot.ogg" />
+        <file name="skeletor.ogg" />
+        <file name="skeletorcut.ogg" />
+        <file name="chinchan.ogg" />
+        <file name="ronaldinio.ogg" />
+        <file name="thwomp.ogg" />
+        <file name="nooo.ogg" />
+        <file name="fart.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <file name="op.ogg" />
+        <file name="think.ogg" />
+        <file name="title.ogg" />
+        <file name="cleareyes.ogg" />
+        <file name="epilogue.ogg" />
+        <file name="boss.ogg" />
+        <file name="kokiri.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
